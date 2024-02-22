@@ -51,6 +51,40 @@
 	arr2 = ['포도', 15, false, 'k', 89.8];
 	let str = arr2.join(" * * "); // 원하는 구분자를 넣어서 나열 가능
 	document.write(str);
+	document.write(`<hr>`);
+	
+	// 자바스크립트에서의 배열은 추가 삭제가 가능하다.
+	let myArr2 = ['포도', 15, false, 'k', 89.8];
+	// 배열 끝에 추가
+	myArr2.push('JSP'); // , '' 여러개 한번에 추가 가능
+	
+	console.log(myArr2);
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;`);
+	}
+	document.write(`<hr>`);
+	
+	// 배열 마지막 삭제
+	myArr2.pop();
+	console.log(myArr2);
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;`);
+	}
+	document.write(`<hr>`);
+	
+	// 배열 맨 처음에 추가됨 unshift()
+	myArr2.unshift('JSP');
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;`);
+	}
+	document.write(`<hr>`);
+	
+	// 배열 맨 처음 요소 삭제 shift()
+		myArr2.shift();
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;`);
+	}
+	document.write(`<hr>`);
 </script>
 </head>
 <body>
