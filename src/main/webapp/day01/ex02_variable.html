@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수</title>
+<script type="text/javascript">
+	// JS 변수 : 자료형을 지정하지 않는다.
+	//			 숫자로 시작할 수 없다.
+	//			 대소문자 구별한다.
+	// 카멜표기법 : myFristHome (첫단어 소문자 이후 단어 첫글자만 대문자))
+	// 팟홀표기법 : my_first_home (단어 사이에 _ 붙임)
+	
+	// 변수 생성
+	// 1. var 이름 = 데이터 (정수, 실수, boolean, char, string, null, class....) , var 변수예약어
+	var name = 'bathingape';
+    console.log(name); // bathingape
+	
+    // 단점 : 다시 선언해도 재선언이 가능하다., 프로젝트 시 값이 바뀔 우려가 있다.
+    var name = 'javascript';
+    console.log(name); // javascript
+	
+    // ES란, ECMAScript 의 약자이며 자바스크립트의 표준, 규격을 나타내는 용어이다.
+    // 뒤에 숫자는 버전을 뜻하고 ES5 는 2009년 ES6 는 2015년에 출시되었다.
+    
+    // 2. let => 권장 (재할당 가능)
+    let addr = 'bathingape';
+    console.log(addr); // bathingape
+	
+    // 다시 선언하면 오류 발생 => Uncaught SyntaxError: Identifier 'name' has already been declared
+    // let addr = 'javascript'
+    // console.log(addr) 
+	
+    // 데이터 재할당 가능
+    addr = addr + '12345';
+    console.log(addr); // bathingape12345
+    
+    let str = 'Hello' + addr;
+    console.log('str = ' + str ); // str = Hellobathingape12345
+    // 자바스크립트 표현식 사용 가능, 홑따옴표 아니고 물결에 있는 삐침
+    let str2 = `Hello${addr}`;
+    console.log('str = ' + str2) // str = Hellobathingape12345
+    console.log(`str = Hello${addr}`); // str = Hellobathingape12345
+    
+    // 3. const => 상수 (재선언, 재할당 불가능)
+    const gender = '남성';
+    console.log(gender);
+    
+    // 재선언 불가능
+    // const gender = '여성';
+    
+    // 재할당 불가능, 화면상 오류는 안나지만 f12 개발자모드에서 오류나옴
+//     gender = '여성';
+//     console.log(gender);
+    
+    // 4. 호이스팅 : var 선언문이나 function 선언문 등을 해당 스코프의 선두로 옮긴 것처럼 동작하는 특성을 말한다.
+    // 				 let, const를 포함하여 모든 선언(var, let, const, function, function*, class)을 호이스팅한다.
+    //		  		 var 로 선언된 변수와는 달리 let 로 선언된 변수를 선언문 이전에 참조하면 참조 에러(ReferenceError)가 발생한다.
+    //				 쉽게말해 선언한 애를 먼저 인식해서 
+    
+    console.log(age);
+    var age = 14;
+	
+    // 참조 에러 : Uncaught ReferenceError: Cannot access 'age2' before initialization
+    let age2 = 25.6;
+    console.log(age2);
+</script>
+</head>
+<body>
+
+</body>
+</html>

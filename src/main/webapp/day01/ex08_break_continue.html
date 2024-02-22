@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>break 와 continue</title>
+<script type="text/javascript">
+	for (var i = 1; i < 10; i++) {
+		if (i == 5) break;
+		document.write(`i = ${i} <br>`);
+	}
+	document.write(`<hr>`);
+
+	for (var i = 1; i < 10; i++) {
+		if (i == 5) continue;
+		document.write(`i = ${i} <br>`);
+	}
+	document.write(`<hr>`);
+	
+	// 짝수만
+	for (var i = 1; i < 11; i++) {
+		if (i % 2 == 1) continue;
+		document.write(`i = ${i} <br>`);
+	}
+	document.write(`<hr>`);
+</script>
+</head>
+<body>
+
+</body>
+</html>
