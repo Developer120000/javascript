@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Number 클래스</title>
+<script type="text/javascript">
+	let s1 = 10;
+	let s2 = 6;
+	document.write((s1 + s2) + '<br>');
+	document.write((s1 - s2) + '<br>');
+	document.write((s1 * s2) + '<br>');
+	document.write(`${(s1 / s2).toFixed(1)} <br>`);
+	document.write((s1 % s2) + '<br>');
+	document.write('<hr>');
+	
+	// 문자와 문자
+	s1 = "10";
+	s2 = "6";
+	document.write((s1 + s2) + '<br>'); // 문자, 문자 계산시 + 만 계산이 안된다, 문자연결자가 된다.
+	document.write((s1 - s2) + '<br>');
+	document.write((s1 * s2) + '<br>');
+	document.write(`${s1 / s2} <br>`);
+	document.write((s1 % s2) + '<br>');
+	document.write('<hr>');
+	
+	// 문자와 숫자
+	s1 = 10;
+	s2 = "6";
+	document.write((s1 + s2) + '<br>'); // 문자, 숫자 계산시 + 만 계산이 안된다, 문자연결자가 된다.
+	document.write((s1 - s2) + '<br>');
+	document.write((s1 * s2) + '<br>');
+	document.write(`${s1 / s2} <br>`);
+	document.write((s1 % s2) + '<br>');
+	document.write('<hr>');
+	
+	// toFixed(자릿수) : 지정된 소수점 이하 자릿수 작성(반올림), 자릿수에는 음수 사용 불가
+	s1 = 214.656;
+	s2 = 214.444;
+	// 오류발생
+	// document.write(s1.toFixed(-1) + '<br>');
+	document.write(s1.toFixed(0) + '<br>');
+	document.write(s1.toFixed(1) + '<br>');
+	document.write(s1.toFixed(2) + '<br>');
+	document.write(s1.toFixed(3) + '<br>');
+	document.write(s1.toFixed(4	) + '<br>');
+	document.write('<hr>');
+
+	document.write(s2.toFixed(0) + '<br>');
+	document.write(s2.toFixed(1) + '<br>');
+	document.write(s2.toFixed(2) + '<br>');
+	document.write(s2.toFixed(3) + '<br>');
+	document.write(s2.toFixed(4	) + '<br>');
+	document.write('<hr>');
+	
+	// 문자열을 숫자로 변환 => Number, parseInt, parseFloat
+	// NaN(Not a Number) : 숫자가 들어갈 자리에 숫자가 아닌 다른 값이 들어오면 표시 되는 예약어
+	// isNaN : NaN 확인 (NaN 이면 true)
+	
+	document.write(Number(true) + 10 + '<br>'); // 11 , true = 1
+	document.write(Number(false) + 10 + '<br>'); // 10 , false = 0
+	document.write(Number('10') + 10 + '<br>'); // 20
+	document.write('<hr>');
+	
+	// .toFixed(3) => 결과가 string 이라 + 10 이 뒤에 붙는다
+	document.write(Number('10.124').toFixed(3) + 10 + '<br>'); // 10.12410
+	document.write(Number('10A') + 10 + '<br>'); // NaN
+	document.write(Number('A10') + 10 + '<br>'); // NaN
+	document.write(Number('hello') + 10 + '<br>'); // NaN
+	document.write(Number('10		') + 10 + '<br>'); // 20 , 공백은 상관없음
+	document.write(Number('		10		') + 10 + '<br>'); // 20
+	document.write(Number('		10') + 10 + '<br>'); // 20
+	document.write('<hr>');
+	
+	// parseInt : 숫자와 문자가 같이 있을 때 숫자로 시작하면 숫자부분은 숫자로 인정
+	//			  문자로 시작하면 인정안함
+	document.write(parseInt(true) + 10 + '<br>'); // 11 -> NaN
+	document.write(parseInt(false) + 10 + '<br>'); // 10 -> NaN
+	document.write(parseInt('10A') + 10 + '<br>'); // NaN -> 20
+	document.write(parseInt('A10') + 10 + '<br>'); // NaN
+	document.write(parseInt('hello') + 10 + '<br>'); // NaN
+	document.write(parseInt('10		') + 10 + '<br>'); // 20
+	document.write(parseInt('		10		') + 10 + '<br>'); // 20
+	document.write(parseInt('		10') + 10 + '<br>'); // 20
+	document.write('<hr>');
+	
+	// parseFloat : 
+	document.write(parseFloat(true) + 10 + '<br>'); // 11 -> NaN
+	document.write(parseFloat(false) + 10 + '<br>'); // 10 -> NaN
+	document.write(parseFloat('10A') + 10 + '<br>'); // NaN -> 20
+	document.write(parseFloat('10.03A') + 10 + '<br>'); // 20.03
+	document.write(parseFloat('10,03A') + 10 + '<br>'); // 20, 쉼표앞 까지만 숫자로 인정
+	document.write(parseFloat('A10') + 10 + '<br>'); // NaN
+	document.write(parseFloat('hello') + 10 + '<br>'); // NaN
+	document.write(parseFloat('10		') + 10 + '<br>'); // 20
+	document.write(parseFloat('		10		') + 10 + '<br>'); // 20
+	document.write(parseFloat('		10') + 10 + '<br>'); // 20
+	document.write('<hr>');
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
