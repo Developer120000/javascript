@@ -2,7 +2,7 @@
 
 a:link{color: black;}
 a:visited{color: rgb(0, 0, 0);}
-a:acrive{color: rgb(0, 0, 0);}
+a:active{color: rgb(0, 0, 0);}
 
 a{font-size: 1rem; text-decoration: none;}
 

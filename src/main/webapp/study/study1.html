@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	a:link{color: black;}
+	a:visited{color: rgb(0, 0, 0);}
+	a:active{color: rgb(0, 0, 0);}
+	a{font-size: 1rem; text-decoration: none;}
+	
+	ul{
+		list-style: none;
+		width: 500px;
+		margin: 10px auto;
+		padding: 0px;
+	}
+	li{
+		display: inline-block;
+		width: 120px;
+		border: 1px solid #ccc;
+		padding: 10px 15px;
+		text-align: center;
+	}
+	#result{
+		width: 500px;
+		height: 300px;
+		margin: 30px auto;
+		border: 2px solid #ccc;
+	}
+	
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#" id="btn1">Green</a></li>
+		<li><a href="#" id="btn2">Orange</a></li>
+		<li><a href="#" id="btn3">Purple</a></li>
+	</ul>
+	<ul>
+		<li><a href="#" onclick="changBg('green')">Green</a></li>
+		<li><a href="#" onclick="changBg('orange')">Orange</a></li>
+		<li><a href="#" onclick="changBg('purple')">Purple</a></li>
+	</ul>
+	<div id="result"></div>
+	
+	<script type="text/javascript">
+		const result = document.querySelector('#result');
+	
+		const btn1 = document.querySelector('#btn1');
+		btn1.addEventListener("click", (e) => {
+			result.style.backgroundColor = 'green';
+		})
+		const btn2 = document.querySelector('#btn2');
+		btn2.addEventListener("click", (e) => {
+			result.style.backgroundColor = 'orange';
+		})
+		const btn3 = document.querySelector('#btn3');
+		btn3.addEventListener("click", (e) => {
+			result.style.backgroundColor = 'purple';
+		})
+		
+		function changBg(color) {
+		    result.style.backgroundColor = color;
+		}
+	</script>
+</body>
+</html>
