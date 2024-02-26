@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동기와 비동기</title>
+</head>
+<body>
+<!--
+	 동기(sync)란 코드를 순차적으로 실행하는 방법, 앞선 작업이 끝날 때 까지 대기한다.
+	 비동기(async)란 순차적으로 하지 않는 방법
+ -->
+ <script type="text/javascript">
+//  	function syncFunc() {
+// 		console.log('첫번째 작업');
+// 		console.log('두번째 작업');
+// 		console.log('세번째 작업');
+// 		console.log('네번째 작업');
+// 	}
+//  	syncFunc();
+
+//  	function asyncFunc() {
+// 		console.log('첫번째 작업');
+// 		setTimeout(() => {
+// 			console.log('두번째 작업');
+// 		}, 1000);
+// 		console.log('세번째 작업-1');
+// 		console.log('세번째 작업-2');
+// 		console.log('세번째 작업-3');
+// 		setTimeout(() => {
+//  		console.log('네번째 작업');
+// 		}, 1000);
+// 	}
+//  	asyncFunc(); // 첫번째, 세번째, 두번째, 네번째 순서로 나옴
+
+// 		function taskSyncFunction(callback) { // 인자에 callback 은 생략가능
+// 			console.log('첫번째 작업');
+// 			console.log('두번째 작업');
+// 			callback();
+// 			console.log('세번째 작업');
+// 		}
+// 		// 콜백함수 실행방법, 인자에 ()=>{} 들어감
+// 		taskSyncFunction(()=>{
+// 			console.log('콜백함수 실행');
+// 		});									// 첫번째, 두번째, callback, 세번재, 실행 완료 순서
+// 		console.log('실행 완료');
+		
+		function taskAsyncFunction(callback) {
+			console.log('start');
+			setTimeout(() => {
+				console.log('첫번째 작업');
+	 			console.log('두번째 작업');
+	 			callback();
+	 			console.log('세번째 작업');
+			}, 1000);
+			console.log('end');
+		}
+		
+		taskAsyncFunction(()=>{
+			console.log('콜백함수 실행');
+		});						// start, end, 실행 완료, 첫번째, 두번째, 콜백함수 실행, 세번째 순서
+		console.log('실행 완료');
+ </script>
+</body>
+</html>

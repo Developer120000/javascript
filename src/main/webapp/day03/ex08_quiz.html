@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+	width: 400px;
+	border: 1px solid black;
+}
+li{
+	list-style: none;
+	color: black;
+}
+.check{
+	margin-right: 15px;
+	color: lightgray;
+}
+</style>
+</head>
+<body>
+<div>
+	<h1>할 일 목록</h1>
+    <ul>
+        <li><span class="check">&#8730;</span>할 일 1 </li>
+        <li><span class="check">&#8730;</span>할 일 2 </li>
+        <li><span class="check">&#8730;</span>할 일 3 </li>
+        <li><span class="check">&#8730;</span>할 일 4 </li>
+        <li><span class="check">&#8730;</span>할 일 5 </li>
+    </ul>
+</div>
+    
+    <script type="text/javascript">
+    	let chk = document.querySelectorAll('.check');
+    	for (let k of chk) {
+			k.addEventListener('click', (e)=>{
+				e.target.parentNode.style.color="#ccc";
+				e.target.parentNode.style.textDecoration="line-through";
+			});
+		}
+    	
+    </script>
+</body>
+</html>

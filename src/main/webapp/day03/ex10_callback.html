@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function getUser(userId, callback) {
+		setTimeout(() => {
+			const user = {id:userId, name:'nohssam'};
+			callback(user); // 아래에 콜백 인자에 넣어줌
+		}, 1000);
+	}
+	
+	function getPosts(userid, callback) {
+		setTimeout(() => {
+			const posts = [{id:1, title:'post 1'}, {id:2, title:'post 2'}];
+			callback(posts);
+		}, 1000);
+	}
+	
+	function getComment(postid, callback) {
+		setTimeout(() => {
+			const comments = [{id:1, text:'comment 1'}, {id:2, text:'comment 2'}, {id:3, text:'comment 3'}];
+			callback(comments);
+		}, 1000);
+	}
+	/* 콜백지옥 : 콜백함수안에 콜백함수 계속 호출 */
+	getUser(1, (user)=> {
+		console.log('user:', user); // id: 1, name : 'nohssam'
+		getPosts(user.id, (posts)=> {
+			console.log('posts:', posts);
+			getComment(posts.id, (comments)=> {
+				console.log('comments', comments);
+			})
+		})
+	})
+</script>
+</body>
+</html>

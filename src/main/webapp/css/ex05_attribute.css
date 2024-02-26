@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+#container{
+	width: 600px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+/* #prod-pic, #desc{ */
+/* 	float: left; */
+/* } */
+h1{
+	width: 100%;
+}
+#prod-pic{
+	margin: 20px 20px auto 10px;
+	padding: 0px;
+}
+#small-pic{
+	margin-top: 10px;
+	/* float: left; */
+}
+.small{
+	width: 60px;
+	height: 60px;
+	margin: 7px 1px;
+}
+#desc ul{
+	list-style: none;
+	font-size: 1rem;
+	line-height: 1.8;
+}
+#detail{
+	clear: both; /* float 제거 */
+	display: none;
+	padding: 20px;
+}
+.bluetext{
+	color: blue;
+	font-weight: bold;
+}
+#view{
+	text-decoration: none;
+	font-size: 0.9em;
+	color: blue;
+	margin-left: 40px;
+}
+ul button{
+	padding: 10px 60px;
+	margin: 10px 0px;
+}
