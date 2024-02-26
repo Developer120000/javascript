@@ -9,12 +9,11 @@
 /* #prod-pic, #desc{ */
 /* 	float: left; */
 /* } */
-h1{
+#heading{
 	width: 100%;
 }
 #prod-pic{
-	margin: 20px 20px auto 10px;
-	padding: 0px;
+	margin: 20px;
 }
 #small-pic{
 	margin-top: 10px;
@@ -25,13 +24,16 @@ h1{
 	height: 60px;
 	margin: 7px 1px;
 }
+#desc{
+	margin-left: 20px;
+}
 #desc ul{
 	list-style: none;
 	font-size: 1rem;
 	line-height: 1.8;
 }
 #detail{
-	clear: both; /* float 제거 */
+	clear: both;
 	display: none;
 	padding: 20px;
 }
