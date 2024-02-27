@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2 id="title">운동</h2>
+ 	<form name="myForm">						<!-- 자동 완성 기능 해제 : autocomplete="off" -->
+ 		<input type="text" name="myText" placeholder="운동을 입력해주세요" autocomplete="off">
+ 		<button id="before">앞에 추가</button>
+ 		<button id="btn">추가</button>
+ 		<button id="btn_remove">제거</button>
+ 	</form>
+ 	
+ 	<ul class="list">
+ 		<li class="item" id="target">스쿼트
+ 			<button class="remove_btn">X</button>
+ 		</li>
+ 	</ul>
+ 	
+<script type="text/javascript">
+	let inp = document.querySelector('input');
+	let befo = document.querySelector('#before');
+	let bt = document.querySelector('#btn');
+	
+	bt.addEventListener('click', (e) => {
+		e.preventDefault();
+		let li = document.createElement('li');
+		let ul = document.querySelector('.list');
+		let bt = document.createElement('button');
+		bt.textContent = 'x';
+		bt.setAttribute('class', 'remove_btn');
+		
+		li.textcontent = inp.value;
+		li.appendChild(btn);
+		ul.appendChild(li);
+		inputBox.value = '';
+	 	inputBox.focus();
+	})
+</script>
+</body>
+</html>

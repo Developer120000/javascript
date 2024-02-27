@@ -6,8 +6,8 @@
 </head>
 <body>
 <!-- 
-	요소(Element = Node) 생성 : createElement
-	자식 요소에 추가하기 : appendChild
+	요소(Element = Node) 생성 : createElement()
+	자식 요소에 추가하기 : appendChild()
 	삽입위치를 지정해서 삽입 : insertBefore(삽입할 요소, 삽입할 위치)
 	해당 요소 삭제 : remove
 	자식 요소 삭제 : 부모노드.removeChild(자식노드)
@@ -46,19 +46,19 @@
 	btn.addEventListener('click', (e) => {
 		// 새로고침 방지
 		e.preventDefault();
-	 	let li = document.createElement('li');
-	 	let ul = document.querySelector('.list');
-	 	let btn = document.createElement('button');
-	 	btn.textContent = 'X';
+	 	let li = document.createElement('li'); // li 요소 추가
+	 	let ul = document.querySelector('.list'); // .list 클래스 선택
+	 	let btn = document.createElement('button'); // 추가버튼 누를시 버튼 생성 
+	 	btn.textContent = 'X'; // 버튼에 글자 X 넣기 
  	 	// classList-classList 객체를 이용하여서 class를 수정(add=>추가, remove=>삭제)
  	 	// btn.classList.add('remove_btn'); 	// 클래스 리스트에 추가하겠다., 요즘 많이쓰임
-	 	btn.setAttribute = ('class', 'remove_btn');
+	 	btn.setAttribute('class', 'remove_btn');
 	 	
-	 	li.textContent = inputBox.value;
-	 	li.appendChild(btn);
-	 	ul.appendChild(li);
-	 	inputBox.value = '';
-	 	inputBox.focus();
+	 	li.textContent = inputBox.value; // 추가 클릭시 생성되는 li에 입력창에 적은 문자 값 넣기 
+	 	li.appendChild(btn); // li 에 버튼 요소 추가
+	 	ul.appendChild(li); // ul 에 li 요소 추가
+	 	inputBox.value = ''; // 입력창에 있는 텍스트 초기화
+	 	inputBox.focus(); // 입력창에 포커스
 	 	
 	 	btn.addEventListener('click', (e)=>{
 	 		/* e.target.parentNode => 이벤트가 발생한 요소의 부모 */
