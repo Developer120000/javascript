@@ -15,18 +15,22 @@
         <li><img src="../images/tree-4-thumb.jpg" data-src="../images/tree-4.jpg" class="pic"></li>
         <li><img src="../images/tree-5-thumb.jpg" data-src="../images/tree-5.jpg" class="pic"></li>
         <li><img src="../images/tree-6-thumb.jpg" data-src="../images/tree-6.jpg" class="pic"></li>          
-      </ul>    
+      </ul>
     </div>
     <div id="lightbox" onclick='img_close()'>
-            <img src="../images/tree-1.jpg" alt="" id="lightboxImage">            
+    	<img src="../images/tree-1.jpg" alt="" id="lightboxImage">            
     </div>
     <script type="text/javascript">
     	let pics = document.querySelectorAll('.pic');
     	let lightbox = document.querySelector('#lightbox');
     	/* forin 문 하면 작동 안됨, forof 문 사용 */
+    	// forof 문으로 각 사진마다 클릭이벤트 설정, 이벤트효과는 함수
     	for (let k of pics) {
     		k.addEventListener('click', showLightbox);
 		}
+    	// 먼저 클릭한 사진의 바뀔 사진 속성을 this.getAttribute 로 가져오고
+    	// 전체 크기 이미지 id 를 선택해서 src 를 get으로 가져온 속성으로 교체 후
+    	// none 으로 숨겨놨던 것을 block 으로 화면에 보이게 처리 
     	function showLightbox() {
     		let bigpic = this.getAttribute('data-src');
     		document.querySelector('#lightboxImage').setAttribute('src', bigpic);
