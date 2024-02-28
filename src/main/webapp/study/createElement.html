@@ -35,9 +35,23 @@
 		li.textcontent = inp.value;
 		li.appendChild(btn);
 		ul.appendChild(li);
-		inputBox.value = '';
-	 	inputBox.focus();
+		inp.value = '';
+	 	inp.focus();
 	})
+	
+	befo.addEventListener('click', (e) => {
+		e.preventDefault();
+		let li = document.createElement('li');
+	 	let ul = document.querySelector('.list');
+	 	let targetLi = document.querySelector('#target');
+	 	
+	 	li.textContent = inp.value;
+	 	let bt = document.createElement('button');
+	 	bt.textContent = 'x';
+	 	bt.setAttribute('class', 'remove_btn');
+	 	li.appendChild(bt);
+	})
+	
 </script>
 </body>
 </html>
