@@ -37,6 +37,12 @@
 		ul.appendChild(li);
 		inp.value = '';
 	 	inp.focus();
+	 	
+	 	bt.addEventListener('click', (e) => {
+	 		e.target.parentNode.remove();
+	 		inputBox.value = ''; 
+	 		inputBox.focus();
+	 	});
 	})
 	
 	befo.addEventListener('click', (e) => {
@@ -50,8 +56,25 @@
 	 	bt.textContent = 'x';
 	 	bt.setAttribute('class', 'remove_btn');
 	 	li.appendChild(bt);
+	 	
+	 	ul.insertBefore(li, targetLi); // 스쿼트 앞으로 넣기
+	 	inputBox.value = ''; // 추가한 후 입력창에 글자 초기화
+	 	inputBox.focus(); // 글자다시쓰게끔 포커스
+	 	
+	 	bt.addEventListener('click', (e)=>{
+	 		/* e.target.parentNode => 이벤트가 발생한 요소의 부모 */
+	 		e.target.parentNode.remove();
+	 		inputBox.value = ''; // 추가한 후 입력창에 글자 초기화
+		 	inputBox.focus();  // 글자다시쓰게끔 포커스
+	 	});
 	})
 	
+		let remove_bt = document.querySelector('.remove_btn')
+		remove_btn.addEventListener('click', (e) => {
+		e.preventDefault();
+		let targetLi = document.querySelector('#target');
+		targetLi.remove();
+	})
 </script>
 </body>
 </html>
