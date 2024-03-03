@@ -14,7 +14,7 @@
 	});
  -->
 <script type="text/javascript">
-	// 성공하면 myPromise 변수에 resolve 가 저장, 실패하면 rejecdt 가 저장된다.
+	// 성공하면 myPromise 변수에 resolve 가 저장, 실패하면 reject 가 저장된다.
 	const myPromise = new Promise((resolve, reject) => {
 		setTimeout(() => {
 			// 대기(pending) : 비동기 작업 처리 중
@@ -32,13 +32,13 @@
 	
 	myPromise
 	.then((result) => {
-		console.log('result : ', result);
+		console.log('result : ', result); 
 	})
 	.catch((err) => {
-		console.log('Err : ', err);	
+		console.log('Err : ', err);
 	})
 	.finally(() => {
-		console.log('finally~~~');	
+		console.log('finally~~~');
 	})
 	/* 상태 : 
 		- 대기 : 비동기 작업 처리 중

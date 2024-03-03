@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+// 	const pro = new Promise((a, b) => {
+// 		setTimeout(() => {
+// 			const msg = prompt('hello')
+// 			if(msg === 'hello'){
+// 				a('성공');
+// 			}else{
+// 				b('실패');
+// 			}
+// 		}, 2000);
+// 	});
+	
+// 	pro.then((result) => {
+// 		console.log('result : ', result);
+// 	}).catch((err) => {
+// 		console.log('Err : ', err);	
+// 	}).finally(() => {
+// 		console.log('finally~~~');
+// 	})
+
+
+	fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+	.then((a) => {
+		return a.json();
+	}).then((b) => {
+		console.log('b : ', b);
+		return b.filter(obj => obj.id > 3);
+	}).then((c) => {
+		console.log('c : ', c);
+	})
+</script>
+</body>
+</html>
